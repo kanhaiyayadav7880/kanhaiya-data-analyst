@@ -128,6 +128,10 @@ body::after {
     animation: slideDown 0.8s ease;
 }
 
+.navbar-spacer {
+    height: 116px;
+}
+
 /* =========================
    LOGO
 ========================= */
@@ -192,7 +196,7 @@ body::after {
    HOME SECTION
 ========================= */
 .home {
-    min-height: 100vh;
+    min-height: calc(100vh - 116px);
 
     display: flex;
     flex-direction: column;
@@ -224,11 +228,19 @@ body::after {
     margin-bottom: 40px;
 }
 
+.hero-image {
+    width: 100%;
+    max-width: 640px;
+    margin-top: 36px;
+    object-fit: contain;
+}
+
 /* =========================
    BUTTONS
 ========================= */
 .hero-btns {
     display: flex;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
@@ -471,12 +483,21 @@ section {
         padding: 15px 20px;
         flex-direction: column;
         gap: 20px;
+        align-items: center;
+    }
+
+    .navbar-spacer {
+        height: 145px;
     }
 
     .nav-links ul {
         gap: 18px;
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .nav-links ul a {
+        padding: 8px 0;
     }
 
     .home h1 {
@@ -503,6 +524,14 @@ section {
 
 @media (max-width: 600px) {
 
+    .navbar-spacer {
+        height: 180px;
+    }
+
+    .home {
+        min-height: calc(100vh - 180px);
+    }
+
     .home h1 {
         font-size: 38px;
     }
@@ -510,11 +539,13 @@ section {
     .hero-btns {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .btn1,
     .btn2 {
-        width: 220px;
+        width: 100%;
+        max-width: 260px;
     }
 
     .contact-box {
